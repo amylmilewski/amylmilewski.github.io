@@ -832,19 +832,61 @@ section,
   animation: morphShape 20s linear infinite reverse;
 }
 
-.hero .hero-image .shape-1 .icon-container,
 .hero .hero-image .shape-2 .icon-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  gap: 10px; /* spacing between icons */
+  gap: 10px;
   width: 100%;
   height: 100%;
   padding: 10px;
   position: absolute;
   top: 0;
   left: 0;
+}
+
+.hero .hero-image .shape-1 .icon-container {
+  display: flex;
+  flex-direction: column; /* stack rows vertically */
+  /* flex-wrap: wrap; */
+  justify-content: center;
+  align-items: center;
+  gap: 12px; /* space between rows */
+  /* gap: 10px; spacing between icons */
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.icon-row {
+  display: flex;
+  justify-content: center;
+  gap: 12px; /* space between icons in a row */
+}
+
+/* Fix Shape 1 overflow */
+.hero .hero-image .shape-1 {
+  width: 320px; /* slightly wider to fit rows */
+  height: 320px;
+  right: -60px; /* bring it back into view */
+  top: -20px;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+  .icon-row img {
+    width: 32px;
+    height: 32px;
+  }
+  .hero .hero-image .shape-1 {
+    width: 260px;
+    height: 260px;
+    right: -40px;
+  }
 }
 
 @media (max-width: 991px) {
