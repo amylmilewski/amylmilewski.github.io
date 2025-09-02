@@ -868,6 +868,12 @@ section,
   gap: 12px; /* space between icons in a row */
 }
 
+.icon-row img {
+  width: 42px;
+  height: 42px;
+  display: block; /* prevents extra inline spacing */
+}
+
 /* Fix Shape 1 overflow */
 .hero .hero-image .shape-1 {
   width: 320px; /* slightly wider to fit rows */
